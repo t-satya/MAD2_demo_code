@@ -72,20 +72,6 @@ def create_user():
    db.session.commit()
    return jsonify({"message":"User Created"})
 
-"""@app.post("/api/login")
-def login():
-    data = request.json
-    email = data['email']
-    password = data['password']
-    user = User.query.filter_by(email=email).first()
-    if user is None:
-        return jsonify({"message":"User not found"}), 404
-    
-    if not utils.verify_password(password,user.password):
-        return jsonify({"message": "Invalid password"}), 401
-    role = user.roles[0].name
-    print(user.roles)
-    return jsonify({"token":user.fs_uniquifier,"role":role})"""
 
 if __name__ == '__main__':
   # Run the Flask app
